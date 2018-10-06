@@ -33,3 +33,7 @@ it("Should throw error on negative number", () => {
 it("Should throw error on negative number", () => {
     expect(() => add("2,-4,3,-5")).toThrow('Negatives not allowed: -4,-5');
 });
+
+it("numbers bigger then 1000 should be ignored", () => {
+    expect(add("1001,2")).toBe(2);
+});

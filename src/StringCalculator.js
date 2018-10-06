@@ -5,6 +5,7 @@ function add(number){
         return 0;
     }
     var numberArray = number.split(/,|\n/g);
+    numberArray = filterOver1000(numberArray);
     filterNegatives(numberArray);
     return sum(numberArray);
 }
@@ -26,6 +27,9 @@ function filterNegatives(numberArray){
     if(negativeArray.length > 0){
         throw new Error("Negatives not allowed: " + negativeArray.join(','));
     }
+}
+function filterOver1000(numberArray){
+    return numberArray.filter(number => number <= 1000);
 }
 
 module.exports = add;
