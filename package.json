@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "StringCalculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GunnlaugurG/StringCalculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GunnlaugurG/StringCalculator/issues"
+  },
+  "homepage": "https://github.com/GunnlaugurG/StringCalculator#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
