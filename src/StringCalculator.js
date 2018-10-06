@@ -4,8 +4,8 @@ function add(number){
     if(number == ""){
         return 0;
     }
+    var numberArray = number.split(/,|\n/g);
     if(number.includes(",")){
-        var numberArray = number.split(",");
         return sum(numberArray);
     }
     else
