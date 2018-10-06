@@ -37,3 +37,7 @@ it("Should throw error on negative number", () => {
 it("numbers bigger then 1000 should be ignored", () => {
     expect(add("1001,2")).toBe(2);
 });
+
+it("Should handle differend delimeters", () => {
+    expect(add("//;\n1;2")).toBe(3);
+});

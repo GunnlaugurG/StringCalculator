@@ -4,7 +4,7 @@ function add(number){
     if(number == ""){
         return 0;
     }
-    var numberArray = number.split(/,|\n/g);
+    var numberArray = splitstring(number);
     numberArray = filterOver1000(numberArray);
     filterNegatives(numberArray);
     return sum(numberArray);
@@ -31,5 +31,16 @@ function filterNegatives(numberArray){
 function filterOver1000(numberArray){
     return numberArray.filter(number => number <= 1000);
 }
+
+function splitstring(numberArray){
+    if(numberArray[0] == "/" && numberArray[1] == "/"){
+        var firstNewLine = numberArray.indexOf('\n');
+        var extraDelimeter = numberArray.substring(2, firstNewLine);
+        var newString = numberArray.substring(firstNewLine);
+        return newString.split(extraDelimeter);
+    }
+    return numberArray.split(/,|\n/g)
+}
+
 
 module.exports = add;
