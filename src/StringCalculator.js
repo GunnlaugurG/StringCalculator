@@ -5,11 +5,8 @@ function add(number){
         return 0;
     }
     var numberArray = number.split(/,|\n/g);
-    if(number.includes(",")){
-        return sum(numberArray);
-    }
-    else
-    return parseInt(number);
+    filterNegatives(numberArray);
+    return sum(numberArray);
 }
 
 function sum(numberArray){
@@ -19,6 +16,16 @@ function sum(numberArray){
     }
     return returnedNumber;
 }
-
+function filterNegatives(numberArray){
+    var negativeArray = [];
+    for(var i = 0; i < numberArray.length; i++){
+        if(parseInt(numberArray[i]) < 0){
+            negativeArray.push(numberArray[i]);
+        }
+    }
+    if(negativeArray.length > 0){
+        throw new Error("Negatives not allowed: " + negativeArray.join(','));
+    }
+}
 
 module.exports = add;
